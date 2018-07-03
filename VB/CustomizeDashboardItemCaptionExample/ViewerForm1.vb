@@ -68,7 +68,6 @@ Namespace CustomizeDashboardItemCaption_Viewer_Example
             ' Add drop-down menu to show/hide dashboard item captions.
             Dim toolbarItemRoot As New DashboardToolbarItem()
             toolbarItemRoot.Caption = "Show Dashboard Item Captions"
-            'var itemNames = viewer.Dashboard.Items.Select(i => i.Name);
             For Each item In viewer.Dashboard.Items
                 toolbarItemRoot.MenuItems.Add(New DashboardToolbarMenuItem(item.ShowCaption, item.Name, New Action(Of DashboardToolbarItemClickEventArgs)(Sub(args)
                     item.ShowCaption = Not item.ShowCaption
