@@ -9,7 +9,7 @@ A dashboard item caption displays the master filter values applied using that it
 
 Export buttons are hidden for all dashboard items except the map, and for the entire dashboard, if the Category contains "Bikes".
 
-<img src="https://raw.githubusercontent.com/DevExpress-Examples/winforms-dashboard-how-to-customize-the-dashboard-title-and-dashboard-item-captions-t630210/18.1.3+/media/55392a78-d013-4aac-b01a-da9fed4675e3.png">
+<img src="https://github.com/DevExpress-Examples/winforms-dashboard-how-to-customize-the-dashboard-title-and-dashboard-item-captions-t630210/blob/18.1.3%2B/media/55392a78-d013-4aac-b01a-da9fed4675e3.png">
 
 See also the <a href="https://www.devexpress.com/Support/Center/p/T629796">WinForms Dashboard - How to delay data load until all filters are set</a> example.
 
