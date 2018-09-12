@@ -44,21 +44,18 @@ Namespace CustomizeDashboardItemCaption_Viewer_Example
         Private Sub DashboardViewer_CustomizeDashboardTitle(ByVal sender As Object, ByVal e As CustomizeDashboardTitleEventArgs)
             Dim viewer As DashboardViewer = DirectCast(sender, DashboardViewer)
 
-            ' Display filtered dimensions.
-            Dim filteredDimensions As New List(Of String)()
+            ' Display a string of master filter values.
+            Dim filterText As String = String.Empty
             For Each item In viewer.Dashboard.Items
-                Dim dimensionName As String = String.Empty
-                Dim filterValues = viewer.GetCurrentFilterValues(item.ComponentName)
-                If filterValues IsNot Nothing Then
-                    If filterValues.Count > 0 Then
-                        dimensionName = String.Concat(filterValues.Select(Function(axp) String.Format("{0} ", axp.GetAxisPoint(axp.AvailableAxisNames(0)).Dimension.Name)).Distinct())
-                        filteredDimensions.Add(dimensionName)
-                    End If
+                If viewer.CanSetMasterFilter(item.ComponentName) Then
+                    Dim filterValues = viewer.GetCurrentFilterValues(item.ComponentName)
+                    filterText &= GetFilterText(filterValues)
                 End If
             Next item
-            If filteredDimensions.Count > 0 Then
-                e.FilterText = String.Format(" ( Filtered by: {0})", String.Concat(filteredDimensions))
-            End If
+            Dim toolbarItem As New DashboardToolbarItem()
+            toolbarItem.Caption = "Filter: " & filterText
+            e.Items.Insert(0, toolbarItem)
+
 
             ' Remove the Export button depending on the static variable.
             If Not allowExport Then
@@ -68,6 +65,7 @@ Namespace CustomizeDashboardItemCaption_Viewer_Example
             ' Add drop-down menu to show/hide dashboard item captions.
             Dim toolbarItemRoot As New DashboardToolbarItem()
             toolbarItemRoot.Caption = "Show Dashboard Item Captions"
+            toolbarItemRoot.ButtonImage = Image.FromFile("Brand_16x16.png")
             For Each item In viewer.Dashboard.Items
                 toolbarItemRoot.MenuItems.Add(New DashboardToolbarMenuItem(item.ShowCaption, item.Name, New Action(Of DashboardToolbarItemClickEventArgs)(Sub(args)
                     item.ShowCaption = Not item.ShowCaption
@@ -81,10 +79,18 @@ Namespace CustomizeDashboardItemCaption_Viewer_Example
                 System.Diagnostics.Process.Start("https://www.devexpress.com/Support/Center/Example/Details/T630210/")
             End Sub))
             ' Note that a raster image is proportionally resized to 24 px height when displayed in the Title area.
-            'infoLinkItem.ButtonImage = Image.FromFile("KnowledgeBaseArticle_32x32.png");
             infoLinkItem.SvgImage = svgImageCollection1("support")
             e.Items.Add(infoLinkItem)
         End Sub
+
+        Private Function GetFilterText(ByVal filterValues As IList(Of AxisPointTuple)) As String
+            Dim filterText As String = String.Empty
+            If filterValues.Count > 0 Then
+                Dim dimensionName As String = String.Concat(filterValues.Select(Function(axp) String.Format("{0} ", axp.GetAxisPoint(axp.AvailableAxisNames(0)).Dimension.Name)).Distinct())
+                filterText = String.Format(" ({0}:{1})", dimensionName, String.Join(",", filterValues.Select(Function(axp) String.Format(" {0}", axp.GetAxisPoint(axp.AvailableAxisNames(0)).DisplayText)).ToArray()))
+            End If
+            Return filterText
+        End Function
 
         Private Sub DashboardViewer_CustomizeDashboardItemCaption(ByVal sender As Object, ByVal e As CustomizeDashboardItemCaptionEventArgs)
             ' Remove the Export button depending on the static variable.
