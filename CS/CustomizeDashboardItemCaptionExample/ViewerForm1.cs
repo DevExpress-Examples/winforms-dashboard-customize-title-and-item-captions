@@ -46,21 +46,20 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
         {
             DashboardViewer viewer = (DashboardViewer)sender;
 
-            // Display filtered dimensions.
-            List<string> filteredDimensions = new List<string>();
-            foreach (var item in viewer.Dashboard.Items) {
-                string dimensionName = String.Empty;
-                var filterValues = viewer.GetCurrentFilterValues(item.ComponentName);
-                if (filterValues != null)
-                    if (filterValues.Count > 0)
-                    {
-                        dimensionName = String.Concat(filterValues.Select(
-                            axp => String.Format("{0} ", axp.GetAxisPoint(axp.AvailableAxisNames[0]).Dimension.Name)).Distinct());
-                        filteredDimensions.Add(dimensionName);
-                    }
+            // Display a string of master filter values.
+            string filterText = String.Empty;
+            foreach (var item in viewer.Dashboard.Items)
+            {
+                if (viewer.CanSetMasterFilter(item.ComponentName))
+                {
+                    var filterValues = viewer.GetCurrentFilterValues(item.ComponentName);
+                    filterText += GetFilterText(filterValues);
+                }
             }
-            if (filteredDimensions.Count > 0)
-                e.FilterText = String.Format(" ( Filtered by: {0})", String.Concat(filteredDimensions));
+            DashboardToolbarItem toolbarItem = new DashboardToolbarItem();
+            toolbarItem.Caption = "Filter: " + filterText;
+            e.Items.Insert(0, toolbarItem);
+
 
             // Remove the Export button depending on the static variable.
             if (!allowExport)
@@ -71,6 +70,7 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
             // Add drop-down menu to show/hide dashboard item captions.
             DashboardToolbarItem toolbarItemRoot = new DashboardToolbarItem();
             toolbarItemRoot.Caption = "Show Dashboard Item Captions";
+            toolbarItemRoot.ButtonImage = Image.FromFile("Brand_16x16.png");
             foreach (var item in viewer.Dashboard.Items)
             {
                 toolbarItemRoot.MenuItems.Add(new DashboardToolbarMenuItem(item.ShowCaption, item.Name,
@@ -87,9 +87,21 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
                     System.Diagnostics.Process.Start("https://www.devexpress.com/Support/Center/Example/Details/T630210/");
                 }));
             // Note that a raster image is proportionally resized to 24 px height when displayed in the Title area.
-            //infoLinkItem.ButtonImage = Image.FromFile("KnowledgeBaseArticle_32x32.png");
             infoLinkItem.SvgImage = svgImageCollection1["support"];
             e.Items.Add(infoLinkItem);
+        }
+
+        private string GetFilterText(IList<AxisPointTuple> filterValues)
+        {
+            string filterText = string.Empty;
+            if (filterValues.Count > 0)
+            {
+                string dimensionName = String.Concat(filterValues.Select(
+                    axp => String.Format("{0} ", axp.GetAxisPoint(axp.AvailableAxisNames[0]).Dimension.Name)).Distinct());
+                filterText = String.Format(" ({0}:{1})", dimensionName, String.Join(",", filterValues.Select(
+                    axp => String.Format(" {0}", axp.GetAxisPoint(axp.AvailableAxisNames[0]).DisplayText)).ToArray()));
+            }
+            return filterText;
         }
 
         private void DashboardViewer_CustomizeDashboardItemCaption(object sender, CustomizeDashboardItemCaptionEventArgs e)
