@@ -70,13 +70,16 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
             // Add drop-down menu to show/hide dashboard item captions.
             DashboardToolbarItem toolbarItemRoot = new DashboardToolbarItem();
             toolbarItemRoot.Caption = "Show Dashboard Item Captions";
-            toolbarItemRoot.ButtonImage = Image.FromFile("Brand_16x16.png");
+            toolbarItemRoot.SvgImage = svgImageCollection1["title"];
             foreach (var item in viewer.Dashboard.Items)
             {
-                toolbarItemRoot.MenuItems.Add(new DashboardToolbarMenuItem(item.ShowCaption, item.Name,
-                    new Action<DashboardToolbarItemClickEventArgs>((args) => {
+                DashboardToolbarMenuItem menuItem = new DashboardToolbarMenuItem(item.ShowCaption, item.Name,
+                    new Action<DashboardToolbarItemClickEventArgs>((args) =>
+                    {
                         item.ShowCaption = !item.ShowCaption;
-                    })));
+                    }));
+                menuItem.ImageOptions.SvgImage = svgImageCollection1["title"];
+                toolbarItemRoot.MenuItems.Add(menuItem);
             }
             e.Items.Insert(0, toolbarItemRoot);
 

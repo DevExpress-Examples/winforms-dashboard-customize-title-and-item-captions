@@ -29,24 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dashboardViewer = new DevExpress.DashboardWin.DashboardViewer(this.components);
             this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dashboardViewer)).BeginInit();
+            this.dashboardViewer = new DevExpress.DashboardWin.DashboardViewer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardViewer)).BeginInit();
             this.SuspendLayout();
+            // 
+            // svgImageCollection1
+            // 
+            this.svgImageCollection1.Add("support", "image://svgimages/outlook inspired/support.svg");
+            this.svgImageCollection1.Add("title", "image://svgimages/dashboards/title.svg");
             // 
             // dashboardViewer
             // 
+            this.dashboardViewer.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.dashboardViewer.Appearance.Options.UseBackColor = true;
             this.dashboardViewer.DashboardSource = typeof(CustomizeDashboardItemCaption_Viewer_Example.SampleDashboard);
             this.dashboardViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboardViewer.Location = new System.Drawing.Point(0, 0);
             this.dashboardViewer.Name = "dashboardViewer";
             this.dashboardViewer.Size = new System.Drawing.Size(986, 628);
             this.dashboardViewer.TabIndex = 0;
-            // 
-            // svgImageCollection1
-            // 
-            this.svgImageCollection1.Add("support", "image://devav/actions/support.svg");
             // 
             // ViewerForm1
             // 
@@ -56,8 +59,8 @@
             this.Controls.Add(this.dashboardViewer);
             this.Name = "ViewerForm1";
             this.Text = "Dashboard Viewer";
-            ((System.ComponentModel.ISupportInitialize)(this.dashboardViewer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardViewer)).EndInit();
             this.ResumeLayout(false);
 
         }
