@@ -4,7 +4,6 @@ Imports DevExpress.DashboardWin
 Imports System
 Imports System.Collections.Generic
 Imports System.Data
-Imports System.Drawing
 Imports System.Linq
 
 Namespace CustomizeDashboardItemCaption_Viewer_Example

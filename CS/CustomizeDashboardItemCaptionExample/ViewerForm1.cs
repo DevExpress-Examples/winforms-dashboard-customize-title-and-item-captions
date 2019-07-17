@@ -4,7 +4,6 @@ using DevExpress.DashboardWin;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 
 namespace CustomizeDashboardItemCaption_Viewer_Example
@@ -33,7 +32,7 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
             DashboardViewer viewer = (DashboardViewer)sender;
 
             // Display a string of master filter values.
-            string filterText = String.Empty;
+            string filterText = string.Empty;
             foreach (var item in viewer.Dashboard.Items)
             {
                 if (viewer.CanSetMasterFilter(item.ComponentName))
@@ -96,8 +95,8 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
             var filterValues = viewer.GetCurrentFilterValues(e.DashboardItemName);
             if (filterValues != null)
                 if (filterValues.Count > 0)
-                    e.FilterText = String.Format(" ( Filter: {0})", string.Concat(filterValues.Select(
-                        axp => String.Format("{0} ", axp.GetAxisPoint(axp.AvailableAxisNames[0]).DisplayText)).ToArray()));
+                    e.FilterText = string.Format(" ( Filter: {0})", string.Concat(filterValues.Select(
+                        axp => string.Format("{0} ", axp.GetAxisPoint(axp.AvailableAxisNames[0]).DisplayText)).ToArray()));
 
         }
 
@@ -119,10 +118,10 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
             string filterText = string.Empty;
             if (filterValues.Count > 0)
             {
-                string dimensionName = String.Concat(filterValues.Select(
-                    axp => String.Format("{0} ", axp.GetAxisPoint(axp.AvailableAxisNames[0]).Dimension.Name)).Distinct());
-                filterText = String.Format(" ({0}:{1})", dimensionName, String.Join(",", filterValues.Select(
-                    axp => String.Format(" {0}", axp.GetAxisPoint(axp.AvailableAxisNames[0]).DisplayText)).ToArray()));
+                string dimensionName = string.Concat(filterValues.Select(
+                    axp => string.Format("{0} ", axp.GetAxisPoint(axp.AvailableAxisNames[0]).Dimension.Name)).Distinct());
+                filterText = string.Format(" ({0}:{1})", dimensionName, string.Join(",", filterValues.Select(
+                    axp => string.Format(" {0}", axp.GetAxisPoint(axp.AvailableAxisNames[0]).DisplayText)).ToArray()));
             }
             return filterText;
         }

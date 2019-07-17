@@ -142,9 +142,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Invoices.vb" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="Data\Sales.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
