@@ -69,10 +69,10 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
             e.Items.Insert(0, toolbarItemRoot);
 
 
-            // Add a button with an image to navigate to this example online.
+            // Add a button with an image to navigate to Online Help.
             DashboardToolbarItem infoLinkItem = new DashboardToolbarItem("",
                 new Action<DashboardToolbarItemClickEventArgs>((args) => {
-                    System.Diagnostics.Process.Start("https://www.devexpress.com/Support/Center/Example/Details/T630210/");
+                    System.Diagnostics.Process.Start("https://docs.devexpress.com/Dashboard/");
                 }));
             // Note that a raster image is proportionally resized to 24 px height when displayed in the Title area.
             infoLinkItem.SvgImage = svgImageCollection1["support"];
