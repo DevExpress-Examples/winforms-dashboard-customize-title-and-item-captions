@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             DevExpress.DashboardCommon.Dimension dimension1 = new DevExpress.DashboardCommon.Dimension();
+            DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn1 = new DevExpress.DashboardCommon.GridDimensionColumn();
+            DevExpress.DashboardCommon.Measure measure1 = new DevExpress.DashboardCommon.Measure();
+            DevExpress.DashboardCommon.Measure measure2 = new DevExpress.DashboardCommon.Measure();
+            DevExpress.DashboardCommon.GridDeltaColumn gridDeltaColumn1 = new DevExpress.DashboardCommon.GridDeltaColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SampleDashboard));
             DevExpress.DataAccess.Excel.FieldInfo fieldInfo1 = new DevExpress.DataAccess.Excel.FieldInfo();
             DevExpress.DataAccess.Excel.FieldInfo fieldInfo2 = new DevExpress.DataAccess.Excel.FieldInfo();
@@ -42,52 +46,62 @@
             DevExpress.DataAccess.Excel.ExcelWorksheetSettings excelWorksheetSettings1 = new DevExpress.DataAccess.Excel.ExcelWorksheetSettings();
             DevExpress.DataAccess.Excel.ExcelSourceOptions excelSourceOptions1 = new DevExpress.DataAccess.Excel.ExcelSourceOptions(excelWorksheetSettings1);
             DevExpress.DashboardCommon.Dimension dimension2 = new DevExpress.DashboardCommon.Dimension();
-            DevExpress.DashboardCommon.Measure measure1 = new DevExpress.DashboardCommon.Measure();
-            DevExpress.DashboardCommon.Measure measure2 = new DevExpress.DashboardCommon.Measure();
             DevExpress.DashboardCommon.Measure measure3 = new DevExpress.DashboardCommon.Measure();
+            DevExpress.DashboardCommon.Measure measure4 = new DevExpress.DashboardCommon.Measure();
+            DevExpress.DashboardCommon.Measure measure5 = new DevExpress.DashboardCommon.Measure();
             DevExpress.DashboardCommon.ValueMap valueMap1 = new DevExpress.DashboardCommon.ValueMap();
             DevExpress.DashboardCommon.UniformScale uniformScale1 = new DevExpress.DashboardCommon.UniformScale();
             DevExpress.DashboardCommon.DeltaMap deltaMap1 = new DevExpress.DashboardCommon.DeltaMap();
             DevExpress.DashboardCommon.Dimension dimension3 = new DevExpress.DashboardCommon.Dimension();
-            DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn1 = new DevExpress.DashboardCommon.GridDimensionColumn();
-            DevExpress.DashboardCommon.Measure measure4 = new DevExpress.DashboardCommon.Measure();
-            DevExpress.DashboardCommon.Measure measure5 = new DevExpress.DashboardCommon.Measure();
-            DevExpress.DashboardCommon.GridDeltaColumn gridDeltaColumn1 = new DevExpress.DashboardCommon.GridDeltaColumn();
             DevExpress.DashboardCommon.DashboardLayoutGroup dashboardLayoutGroup1 = new DevExpress.DashboardCommon.DashboardLayoutGroup();
             DevExpress.DashboardCommon.DashboardLayoutItem dashboardLayoutItem1 = new DevExpress.DashboardCommon.DashboardLayoutItem();
             DevExpress.DashboardCommon.DashboardLayoutGroup dashboardLayoutGroup2 = new DevExpress.DashboardCommon.DashboardLayoutGroup();
             DevExpress.DashboardCommon.DashboardLayoutItem dashboardLayoutItem2 = new DevExpress.DashboardCommon.DashboardLayoutItem();
             DevExpress.DashboardCommon.DashboardLayoutItem dashboardLayoutItem3 = new DevExpress.DashboardCommon.DashboardLayoutItem();
-            this.listBoxDashboardItem1 = new DevExpress.DashboardCommon.ListBoxDashboardItem();
+            this.gridDashboardItem1 = new DevExpress.DashboardCommon.GridDashboardItem();
             this.dashboardExcelDataSource1 = new DevExpress.DashboardCommon.DashboardExcelDataSource();
             this.choroplethMapDashboardItem1 = new DevExpress.DashboardCommon.ChoroplethMapDashboardItem();
-            this.gridDashboardItem1 = new DevExpress.DashboardCommon.GridDashboardItem();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxDashboardItem1)).BeginInit();
+            this.listBoxDashboardItem1 = new DevExpress.DashboardCommon.ListBoxDashboardItem();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDashboardItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(dimension1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(measure1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(measure2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardExcelDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.choroplethMapDashboardItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(dimension2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(measure1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(measure2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(measure3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridDashboardItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(dimension3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(measure4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(measure5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxDashboardItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(dimension3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
-            // listBoxDashboardItem1
+            // gridDashboardItem1
             // 
-            this.listBoxDashboardItem1.ComponentName = "listBoxDashboardItem1";
-            dimension1.DataMember = "Category";
-            this.listBoxDashboardItem1.DataItemRepository.Clear();
-            this.listBoxDashboardItem1.DataItemRepository.Add(dimension1, "DataItem0");
-            this.listBoxDashboardItem1.DataSource = this.dashboardExcelDataSource1;
-            this.listBoxDashboardItem1.FilterDimensions.AddRange(new DevExpress.DashboardCommon.Dimension[] {
-            dimension1});
-            this.listBoxDashboardItem1.InteractivityOptions.IgnoreMasterFilters = true;
-            this.listBoxDashboardItem1.Name = "Categories";
-            this.listBoxDashboardItem1.ShowCaption = true;
+            dimension1.DataMember = "Product";
+            gridDimensionColumn1.Weight = 78.333333333333329D;
+            gridDimensionColumn1.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
+            gridDimensionColumn1.AddDataItem("Dimension", dimension1);
+            measure1.DataMember = "UnitsSoldYTD (Sum)";
+            measure2.DataMember = "UnitsSoldYTDTarget (Sum)";
+            gridDeltaColumn1.Name = "UnitsSold YTD vs Target";
+            gridDeltaColumn1.Weight = 71.666666666666671D;
+            gridDeltaColumn1.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
+            gridDeltaColumn1.AddDataItem("ActualValue", measure1);
+            gridDeltaColumn1.AddDataItem("TargetValue", measure2);
+            this.gridDashboardItem1.Columns.AddRange(new DevExpress.DashboardCommon.GridColumnBase[] {
+            gridDimensionColumn1,
+            gridDeltaColumn1});
+            this.gridDashboardItem1.ComponentName = "gridDashboardItem1";
+            this.gridDashboardItem1.DataItemRepository.Clear();
+            this.gridDashboardItem1.DataItemRepository.Add(dimension1, "DataItem0");
+            this.gridDashboardItem1.DataItemRepository.Add(measure1, "DataItem1");
+            this.gridDashboardItem1.DataItemRepository.Add(measure2, "DataItem2");
+            this.gridDashboardItem1.DataSource = this.dashboardExcelDataSource1;
+            this.gridDashboardItem1.GridOptions.ColumnWidthMode = DevExpress.DashboardCommon.GridColumnWidthMode.Manual;
+            this.gridDashboardItem1.InteractivityOptions.IgnoreMasterFilters = false;
+            this.gridDashboardItem1.Name = "Product Units Sold";
+            this.gridDashboardItem1.ShowCaption = true;
             // 
             // dashboardExcelDataSource1
             // 
@@ -135,26 +149,26 @@
             this.choroplethMapDashboardItem1.AttributeDimension = dimension2;
             this.choroplethMapDashboardItem1.AttributeName = "NAME";
             this.choroplethMapDashboardItem1.ComponentName = "choroplethMapDashboardItem1";
-            measure1.DataMember = "RevenueYTD (Sum)";
-            measure2.DataMember = "RevenueYTD (Sum)";
-            measure3.DataMember = "RevenueYTDTarget (Sum)";
+            measure3.DataMember = "RevenueYTD (Sum)";
+            measure4.DataMember = "RevenueYTD (Sum)";
+            measure5.DataMember = "RevenueYTDTarget (Sum)";
             this.choroplethMapDashboardItem1.DataItemRepository.Clear();
             this.choroplethMapDashboardItem1.DataItemRepository.Add(dimension2, "DataItem0");
-            this.choroplethMapDashboardItem1.DataItemRepository.Add(measure1, "DataItem1");
-            this.choroplethMapDashboardItem1.DataItemRepository.Add(measure2, "DataItem2");
-            this.choroplethMapDashboardItem1.DataItemRepository.Add(measure3, "DataItem3");
+            this.choroplethMapDashboardItem1.DataItemRepository.Add(measure3, "DataItem1");
+            this.choroplethMapDashboardItem1.DataItemRepository.Add(measure4, "DataItem2");
+            this.choroplethMapDashboardItem1.DataItemRepository.Add(measure5, "DataItem3");
             this.choroplethMapDashboardItem1.DataSource = this.dashboardExcelDataSource1;
             this.choroplethMapDashboardItem1.InteractivityOptions.IgnoreMasterFilters = false;
             this.choroplethMapDashboardItem1.InteractivityOptions.MasterFilterMode = DevExpress.DashboardCommon.DashboardItemMasterFilterMode.Multiple;
             valueMap1.Name = "Revenue YTD";
             valueMap1.Scale = uniformScale1;
             valueMap1.ValueName = "Revenue";
-            valueMap1.AddDataItem("Value", measure1);
+            valueMap1.AddDataItem("Value", measure3);
             deltaMap1.ActualValueName = "Revenue";
             deltaMap1.DeltaName = "vs Target";
             deltaMap1.Name = "Revenue YTD vs Target";
-            deltaMap1.AddDataItem("ActualValue", measure2);
-            deltaMap1.AddDataItem("TargetValue", measure3);
+            deltaMap1.AddDataItem("ActualValue", measure4);
+            deltaMap1.AddDataItem("TargetValue", measure5);
             this.choroplethMapDashboardItem1.Maps.AddRange(new DevExpress.DashboardCommon.ChoroplethMap[] {
             valueMap1,
             deltaMap1});
@@ -168,29 +182,18 @@
             this.choroplethMapDashboardItem1.Viewport.RightLongitude = -66.987022055984482D;
             this.choroplethMapDashboardItem1.Viewport.TopLatitude = 49.369672064487254D;
             // 
-            // gridDashboardItem1
+            // listBoxDashboardItem1
             // 
-            dimension3.DataMember = "Product";
-            gridDimensionColumn1.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
-            gridDimensionColumn1.AddDataItem("Dimension", dimension3);
-            measure4.DataMember = "UnitsSoldYTD (Sum)";
-            measure5.DataMember = "UnitsSoldYTDTarget (Sum)";
-            gridDeltaColumn1.Name = "UnitsSold YTD vs Target";
-            gridDeltaColumn1.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
-            gridDeltaColumn1.AddDataItem("ActualValue", measure4);
-            gridDeltaColumn1.AddDataItem("TargetValue", measure5);
-            this.gridDashboardItem1.Columns.AddRange(new DevExpress.DashboardCommon.GridColumnBase[] {
-            gridDimensionColumn1,
-            gridDeltaColumn1});
-            this.gridDashboardItem1.ComponentName = "gridDashboardItem1";
-            this.gridDashboardItem1.DataItemRepository.Clear();
-            this.gridDashboardItem1.DataItemRepository.Add(dimension3, "DataItem0");
-            this.gridDashboardItem1.DataItemRepository.Add(measure4, "DataItem1");
-            this.gridDashboardItem1.DataItemRepository.Add(measure5, "DataItem2");
-            this.gridDashboardItem1.DataSource = this.dashboardExcelDataSource1;
-            this.gridDashboardItem1.InteractivityOptions.IgnoreMasterFilters = false;
-            this.gridDashboardItem1.Name = "Product Units Sold";
-            this.gridDashboardItem1.ShowCaption = true;
+            this.listBoxDashboardItem1.ComponentName = "listBoxDashboardItem1";
+            dimension3.DataMember = "Category";
+            this.listBoxDashboardItem1.DataItemRepository.Clear();
+            this.listBoxDashboardItem1.DataItemRepository.Add(dimension3, "DataItem0");
+            this.listBoxDashboardItem1.DataSource = this.dashboardExcelDataSource1;
+            this.listBoxDashboardItem1.FilterDimensions.AddRange(new DevExpress.DashboardCommon.Dimension[] {
+            dimension3});
+            this.listBoxDashboardItem1.InteractivityOptions.IgnoreMasterFilters = true;
+            this.listBoxDashboardItem1.Name = "Categories";
+            this.listBoxDashboardItem1.ShowCaption = true;
             // 
             // SampleDashboard
             // 
@@ -202,35 +205,36 @@
             this.gridDashboardItem1,
             this.listBoxDashboardItem1});
             dashboardLayoutItem1.DashboardItem = this.gridDashboardItem1;
-            dashboardLayoutItem1.Weight = 30.036297640653359D;
+            dashboardLayoutItem1.Weight = 33.675799086757991D;
             dashboardLayoutItem2.DashboardItem = this.choroplethMapDashboardItem1;
-            dashboardLayoutItem2.Weight = 75.2439024390244D;
+            dashboardLayoutItem2.Weight = 70.714285714285708D;
             dashboardLayoutItem3.DashboardItem = this.listBoxDashboardItem1;
-            dashboardLayoutItem3.Weight = 24.756097560975611D;
+            dashboardLayoutItem3.Weight = 29.285714285714285D;
             dashboardLayoutGroup2.ChildNodes.AddRange(new DevExpress.DashboardCommon.DashboardLayoutNode[] {
             dashboardLayoutItem2,
             dashboardLayoutItem3});
             dashboardLayoutGroup2.DashboardItem = null;
             dashboardLayoutGroup2.Orientation = DevExpress.DashboardCommon.DashboardLayoutGroupOrientation.Vertical;
-            dashboardLayoutGroup2.Weight = 69.963702359346641D;
+            dashboardLayoutGroup2.Weight = 66.324200913242009D;
             dashboardLayoutGroup1.ChildNodes.AddRange(new DevExpress.DashboardCommon.DashboardLayoutNode[] {
             dashboardLayoutItem1,
             dashboardLayoutGroup2});
             dashboardLayoutGroup1.DashboardItem = null;
+            dashboardLayoutGroup1.Weight = 100D;
             this.LayoutRoot = dashboardLayoutGroup1;
             this.Title.Text = "Sample Dashboard";
             ((System.ComponentModel.ISupportInitialize)(dimension1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxDashboardItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dashboardExcelDataSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(dimension2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDashboardItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardExcelDataSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(dimension2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.choroplethMapDashboardItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(dimension3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridDashboardItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.choroplethMapDashboardItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(dimension3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxDashboardItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

@@ -42,20 +42,20 @@
             // 
             // dashboardViewer
             // 
-            this.dashboardViewer.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.dashboardViewer.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dashboardViewer.Appearance.Options.UseBackColor = true;
             this.dashboardViewer.DashboardSource = typeof(CustomizeDashboardItemCaption_Viewer_Example.SampleDashboard);
             this.dashboardViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboardViewer.Location = new System.Drawing.Point(0, 0);
             this.dashboardViewer.Name = "dashboardViewer";
-            this.dashboardViewer.Size = new System.Drawing.Size(986, 628);
+            this.dashboardViewer.Size = new System.Drawing.Size(800, 570);
             this.dashboardViewer.TabIndex = 0;
             // 
             // ViewerForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(986, 628);
+            this.ClientSize = new System.Drawing.Size(800, 570);
             this.Controls.Add(this.dashboardViewer);
             this.Name = "ViewerForm1";
             this.Text = "Dashboard Viewer";

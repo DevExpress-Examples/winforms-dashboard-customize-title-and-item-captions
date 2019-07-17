@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -40,55 +40,42 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Import Include="Microsoft.VisualBasic" />
-    <Import Include="System.Collections.Generic" />
-    <Import Include="System.Collections" />
-    <Import Include="System.Diagnostics" />
-    <Import Include="System.Linq" />
-    <Import Include="System.Xml.Linq" />
-    <Import Include="System.Data" />
-    <Import Include="System.Drawing" />
-    <Import Include="System.Windows.Forms" />
-    <Import Include="System" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v18.2" />
-    <Reference Include="DevExpress.Charts.v18.2.Core" />
-    <Reference Include="DevExpress.CodeParser.v18.2" />
-    <Reference Include="DevExpress.Dashboard.v18.2.Core" />
-    <Reference Include="DevExpress.Dashboard.v18.2.Win" />
-    <Reference Include="DevExpress.Data.v18.2" />
-    <Reference Include="DevExpress.DataAccess.v18.2" />
-    <Reference Include="DevExpress.DataAccess.v18.2.UI" />
-    <Reference Include="DevExpress.Map.v18.2.Core" />
-    <Reference Include="DevExpress.Office.v18.2.Core" />
-    <Reference Include="DevExpress.PivotGrid.v18.2.Core" />
-    <Reference Include="DevExpress.Printing.v18.2.Core" />
-    <Reference Include="DevExpress.RichEdit.v18.2.Core" />
-    <Reference Include="DevExpress.Sparkline.v18.2.Core" />
-    <Reference Include="DevExpress.TreeMap.v18.2.Core" />
-    <Reference Include="DevExpress.Utils.v18.2" />
-    <Reference Include="DevExpress.Utils.v18.2.UI" />
-    <Reference Include="DevExpress.Xpo.v18.2" />
-    <Reference Include="DevExpress.XtraBars.v18.2" />
-    <Reference Include="DevExpress.XtraCharts.v18.2" />
-    <Reference Include="DevExpress.XtraCharts.v18.2.UI" />
-    <Reference Include="DevExpress.XtraCharts.v18.2.Wizard" />
-    <Reference Include="DevExpress.XtraEditors.v18.2" />
-    <Reference Include="DevExpress.XtraGauges.v18.2.Core" />
-    <Reference Include="DevExpress.XtraGauges.v18.2.Presets" />
-    <Reference Include="DevExpress.XtraGauges.v18.2.Win" />
-    <Reference Include="DevExpress.XtraGrid.v18.2" />
-    <Reference Include="DevExpress.XtraLayout.v18.2" />
-    <Reference Include="DevExpress.XtraMap.v18.2" />
-    <Reference Include="DevExpress.XtraPivotGrid.v18.2" />
-    <Reference Include="DevExpress.XtraPrinting.v18.2" />
-    <Reference Include="DevExpress.XtraReports.v18.2.Extensions" />
-    <Reference Include="DevExpress.XtraReports.v18.2" />
-    <Reference Include="DevExpress.XtraRichEdit.v18.2" />
-    <Reference Include="DevExpress.XtraRichEdit.v18.2.Extensions" />
-    <Reference Include="DevExpress.XtraTreeList.v18.2" />
-    <Reference Include="DevExpress.XtraTreeMap.v18.2" />
+    <Reference Include="DevExpress.BonusSkins.v19.1" />
+    <Reference Include="DevExpress.Charts.v19.1.Core" />
+    <Reference Include="DevExpress.CodeParser.v19.1" />
+    <Reference Include="DevExpress.Dashboard.v19.1.Core" />
+    <Reference Include="DevExpress.Dashboard.v19.1.Win" />
+    <Reference Include="DevExpress.Data.v19.1" />
+    <Reference Include="DevExpress.DataAccess.v19.1" />
+    <Reference Include="DevExpress.DataAccess.v19.1.UI" />
+    <Reference Include="DevExpress.Map.v19.1.Core" />
+    <Reference Include="DevExpress.Office.v19.1.Core" />
+    <Reference Include="DevExpress.PivotGrid.v19.1.Core" />
+    <Reference Include="DevExpress.Printing.v19.1.Core" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Core" />
+    <Reference Include="DevExpress.Sparkline.v19.1.Core" />
+    <Reference Include="DevExpress.TreeMap.v19.1.Core" />
+    <Reference Include="DevExpress.Utils.v19.1" />
+    <Reference Include="DevExpress.Utils.v19.1.UI" />
+    <Reference Include="DevExpress.Xpo.v19.1" />
+    <Reference Include="DevExpress.XtraBars.v19.1" />
+    <Reference Include="DevExpress.XtraCharts.v19.1" />
+    <Reference Include="DevExpress.XtraCharts.v19.1.UI" />
+    <Reference Include="DevExpress.XtraCharts.v19.1.Wizard" />
+    <Reference Include="DevExpress.XtraEditors.v19.1" />
+    <Reference Include="DevExpress.XtraGauges.v19.1.Core" />
+    <Reference Include="DevExpress.XtraGauges.v19.1.Presets" />
+    <Reference Include="DevExpress.XtraGauges.v19.1.Win" />
+    <Reference Include="DevExpress.XtraGrid.v19.1" />
+    <Reference Include="DevExpress.XtraLayout.v19.1" />
+    <Reference Include="DevExpress.XtraMap.v19.1" />
+    <Reference Include="DevExpress.XtraPivotGrid.v19.1" />
+    <Reference Include="DevExpress.XtraPrinting.v19.1" />
+    <Reference Include="DevExpress.XtraReports.v19.1.Extensions" />
+    <Reference Include="DevExpress.XtraReports.v19.1" />
+    <Reference Include="DevExpress.XtraRichEdit.v19.1" />
+    <Reference Include="DevExpress.XtraTreeList.v19.1" />
+    <Reference Include="DevExpress.XtraTreeMap.v19.1" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -99,6 +86,18 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewerForm1.vb">

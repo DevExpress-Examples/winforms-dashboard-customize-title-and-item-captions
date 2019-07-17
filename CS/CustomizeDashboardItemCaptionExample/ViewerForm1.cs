@@ -18,28 +18,14 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
             InitializeComponent();
             dashboardViewer.AllowPrintDashboardItems = true;
 
-            dashboardViewer.PopupMenuShowing += DashboardViewer_PopupMenuShowing;
             dashboardViewer.CustomizeDashboardTitle += DashboardViewer_CustomizeDashboardTitle;
             dashboardViewer.CustomizeDashboardItemCaption += DashboardViewer_CustomizeDashboardItemCaption;
+
+            dashboardViewer.PopupMenuShowing += DashboardViewer_PopupMenuShowing;
             dashboardViewer.MasterFilterSet += DashboardViewer_MasterFilterSet;
 
             dashboardViewer.UpdateDashboardTitle();
             UpdateDashboardItemCaptions();
-        }
-
-        private void DashboardViewer_PopupMenuShowing(object sender, DashboardPopupMenuShowingEventArgs e)
-        {
-            // Hide popup menu everywhere except the dashboard title, to hide commands related to the export actions. 
-            if (e.DashboardArea == DashboardArea.DashboardItem)
-                e.Allow = false;
-        }
-        
-        private void DashboardViewer_MasterFilterSet(object sender, MasterFilterSetEventArgs e)
-        {
-            if (e.DashboardItemName == "listBoxDashboardItem1")
-                allowExport = e.SelectedValues.Select(value => value[0].ToString()).Contains("Bikes") ? false : true;
-            UpdateDashboardItemCaptions();
-            dashboardViewer.UpdateDashboardTitle();
         }
 
         private void DashboardViewer_CustomizeDashboardTitle(object sender, CustomizeDashboardTitleEventArgs e)
@@ -69,7 +55,7 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
 
             // Add drop-down menu to show/hide dashboard item captions.
             DashboardToolbarItem toolbarItemRoot = new DashboardToolbarItem();
-            toolbarItemRoot.Caption = "Show Dashboard Item Captions";
+            toolbarItemRoot.Caption = @"Show/Hide Dashboard Item Captions";
             toolbarItemRoot.SvgImage = svgImageCollection1["title"];
             foreach (var item in viewer.Dashboard.Items)
             {
@@ -94,6 +80,40 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
             e.Items.Add(infoLinkItem);
         }
 
+        private void DashboardViewer_CustomizeDashboardItemCaption(object sender, CustomizeDashboardItemCaptionEventArgs e)
+        {
+            // Remove the Export button depending on the static variable.
+            if (!allowExport)
+            {
+                if (!e.DashboardItemName.Contains("Map"))
+                {
+                    RemoveExportButton(e.Items);
+                }
+            }
+
+            // Display filter values.
+            DashboardViewer viewer = (DashboardViewer)sender;
+            var filterValues = viewer.GetCurrentFilterValues(e.DashboardItemName);
+            if (filterValues != null)
+                if (filterValues.Count > 0)
+                    e.FilterText = String.Format(" ( Filter: {0})", string.Concat(filterValues.Select(
+                        axp => String.Format("{0} ", axp.GetAxisPoint(axp.AvailableAxisNames[0]).DisplayText)).ToArray()));
+
+        }
+
+        private void DashboardViewer_PopupMenuShowing(object sender, DashboardPopupMenuShowingEventArgs e)
+        {
+            // Hide popup menu everywhere except the dashboard title, to hide commands related to the export actions. 
+            if (e.DashboardArea == DashboardArea.DashboardItem)
+                e.Allow = false;
+        }       
+        private void DashboardViewer_MasterFilterSet(object sender, MasterFilterSetEventArgs e)
+        {
+            if (e.DashboardItemName == "listBoxDashboardItem1")
+                allowExport = e.SelectedValues.Select(value => value[0].ToString()).Contains("Bikes") ? false : true;
+            UpdateDashboardItemCaptions();
+            dashboardViewer.UpdateDashboardTitle();
+        }
         private string GetFilterText(IList<AxisPointTuple> filterValues)
         {
             string filterText = string.Empty;
@@ -106,28 +126,6 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
             }
             return filterText;
         }
-
-        private void DashboardViewer_CustomizeDashboardItemCaption(object sender, CustomizeDashboardItemCaptionEventArgs e)
-        {
-            // Remove the Export button depending on the static variable.
-            if (!allowExport)
-            {
-                    if (!e.DashboardItemName.Contains("Map"))
-                    {
-                        RemoveExportButton(e.Items);
-                    }
-                }
-
-            // Display filter values.
-            DashboardViewer viewer = (DashboardViewer)sender;
-            var filterValues = viewer.GetCurrentFilterValues(e.DashboardItemName);
-            if (filterValues != null)
-                if (filterValues.Count > 0)
-            e.FilterText = String.Format(" ( Filter: {0})", string.Concat(filterValues.Select(
-                axp => String.Format("{0} ", axp.GetAxisPoint(axp.AvailableAxisNames[0]).DisplayText)).ToArray()));
-
-        }
-
         private void UpdateDashboardItemCaptions()
         {
             foreach (DashboardItem i in dashboardViewer.Dashboard.Items)
@@ -135,7 +133,6 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
                 dashboardViewer.UpdateDashboardItemCaption(i.ComponentName);
             }
         }
-
         private void RemoveExportButton(IList<DashboardToolbarItem> items)
         {
             var exportItem = items.FirstOrDefault(i => i.ButtonType == DashboardButtonType.Export);
