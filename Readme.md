@@ -1,4 +1,4 @@
-# WinForms Dashboard - How to customize the dashboard title and dashboard item captions
+# WinForms Dashboard - How to Customize the Dashboard Title and Dashboard Item Captions
 
 
 This example demonstrates how to handle the [DashboardViewer](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardViewer) events to modify dashboard title and dashboard item captions. You can add or remove command buttons and display a text.
