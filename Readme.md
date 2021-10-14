@@ -3,11 +3,6 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T630210)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
-
-* [ViewerForm1.cs](./CS/CustomizeDashboardItemCaptionExample/ViewerForm1.cs)
-<!-- default file list end -->
 
 # Dashboard for WinForms - How to Customize the Dashboard Title and Dashboard Item Captions
 
@@ -25,6 +20,12 @@ A **dashboard item caption** displays the item's master filter values.
 Export buttons are hidden for all dashboard items except the map, and for the entire dashboard, if the displayed data's Category field contains "Bikes".
 
 ![screenshot](/images/screenshot.png)
+
+<!-- default file list -->
+## Files to look at
+
+* [ViewerForm1.cs](./CS/CustomizeDashboardItemCaptionExample/ViewerForm1.cs)
+<!-- default file list end -->
 
 ## Documentation
 
