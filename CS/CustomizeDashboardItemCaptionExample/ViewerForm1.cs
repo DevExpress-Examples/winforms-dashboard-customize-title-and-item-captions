@@ -1,4 +1,4 @@
-﻿using DevExpress.DashboardCommon;
+using DevExpress.DashboardCommon;
 using DevExpress.DashboardCommon.ViewerData;
 using DevExpress.DashboardWin;
 using System;
@@ -6,14 +6,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace CustomizeDashboardItemCaption_Viewer_Example
-{
-    public partial class ViewerForm1 : DevExpress.XtraEditors.XtraForm
-    {
-        private static bool allowExport = false;
-
-        public ViewerForm1()
-        {
+namespace CustomizeDashboardItemCaption_Viewer_Example {
+    public partial class ViewerForm1 : DevExpress.XtraEditors.XtraForm {
+        private static bool allowExport = false; 
+        public ViewerForm1() {
             InitializeComponent();
             dashboardViewer.AllowPrintDashboardItems = true;
 
@@ -27,16 +23,13 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
             UpdateDashboardItemCaptions();
         }
 
-        private void DashboardViewer_CustomizeDashboardTitle(object sender, CustomizeDashboardTitleEventArgs e)
-        {
+        private void DashboardViewer_CustomizeDashboardTitle(object sender, CustomizeDashboardTitleEventArgs e) {
             DashboardViewer viewer = (DashboardViewer)sender;
 
             // Display a string of master filter values.
             string filterText = string.Empty;
-            foreach (var item in viewer.Dashboard.Items)
-            {
-                if (viewer.CanSetMasterFilter(item.ComponentName))
-                {
+            foreach (var item in viewer.Dashboard.Items) {
+                if (viewer.CanSetMasterFilter(item.ComponentName)) {
                     var filterValues = viewer.GetCurrentFilterValues(item.ComponentName);
                     filterText += GetFilterText(filterValues);
                 }
@@ -47,8 +40,7 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
 
 
             // Remove the Export button depending on the static variable.
-            if (!allowExport)
-            {
+            if (!allowExport) {
                 RemoveExportButton(e.Items);
             }
 
@@ -56,11 +48,9 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
             DashboardToolbarItem toolbarItemRoot = new DashboardToolbarItem();
             toolbarItemRoot.Caption = @"Show/Hide Dashboard Item Captions";
             toolbarItemRoot.SvgImage = svgImageCollection1["title"];
-            foreach (var item in viewer.Dashboard.Items)
-            {
-                DashboardToolbarMenuItem menuItem = new DashboardToolbarMenuItem(item.ShowCaption, item.Name,
-                    new Action<DashboardToolbarItemClickEventArgs>((args) =>
-                    {
+            foreach (var item in viewer.Dashboard.Items) {
+                DashboardToolbarMenuItem menuItem = new DashboardToolbarMenuItem(item.ShowCaption, item.Name, 
+                    new Action<DashboardToolbarItemClickEventArgs>((args) => {
                         item.ShowCaption = !item.ShowCaption;
                     }));
                 menuItem.ImageOptions.SvgImage = svgImageCollection1["title"];
@@ -79,13 +69,10 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
             e.Items.Add(infoLinkItem);
         }
 
-        private void DashboardViewer_CustomizeDashboardItemCaption(object sender, CustomizeDashboardItemCaptionEventArgs e)
-        {
+        private void DashboardViewer_CustomizeDashboardItemCaption(object sender, CustomizeDashboardItemCaptionEventArgs e) {
             // Remove the Export button depending on the static variable.
-            if (!allowExport)
-            {
-                if (!e.DashboardItemName.Contains("Map"))
-                {
+            if (!allowExport) {
+                if (!e.DashboardItemName.Contains("Map")) {
                     RemoveExportButton(e.Items);
                 }
             }
@@ -100,24 +87,20 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
 
         }
 
-        private void DashboardViewer_PopupMenuShowing(object sender, DashboardPopupMenuShowingEventArgs e)
-        {
+        private void DashboardViewer_PopupMenuShowing(object sender, DashboardPopupMenuShowingEventArgs e) {
             // Hide popup menu everywhere except the dashboard title, to hide commands related to the export actions. 
             if (e.DashboardArea == DashboardArea.DashboardItem)
                 e.Allow = false;
         }       
-        private void DashboardViewer_MasterFilterSet(object sender, MasterFilterSetEventArgs e)
-        {
+        private void DashboardViewer_MasterFilterSet(object sender, MasterFilterSetEventArgs e) {
             if (e.DashboardItemName == "listBoxDashboardItem1")
                 allowExport = e.SelectedValues.Select(value => value[0].ToString()).Contains("Bikes") ? false : true;
             UpdateDashboardItemCaptions();
             dashboardViewer.UpdateDashboardTitle();
         }
-        private string GetFilterText(IList<AxisPointTuple> filterValues)
-        {
+        private string GetFilterText(IList<AxisPointTuple> filterValues) {
             string filterText = string.Empty;
-            if (filterValues.Count > 0)
-            {
+            if (filterValues.Count > 0) {
                 string dimensionName = string.Concat(filterValues.Select(
                     axp => string.Format("{0} ", axp.GetAxisPoint(axp.AvailableAxisNames[0]).Dimension.Name)).Distinct());
                 filterText = string.Format(" ({0}:{1})", dimensionName, string.Join(",", filterValues.Select(
@@ -125,18 +108,14 @@ namespace CustomizeDashboardItemCaption_Viewer_Example
             }
             return filterText;
         }
-        private void UpdateDashboardItemCaptions()
-        {
-            foreach (DashboardItem i in dashboardViewer.Dashboard.Items)
-            {
+        private void UpdateDashboardItemCaptions()         {
+            foreach (DashboardItem i in dashboardViewer.Dashboard.Items) {
                 dashboardViewer.UpdateDashboardItemCaption(i.ComponentName);
             }
         }
-        private void RemoveExportButton(IList<DashboardToolbarItem> items)
-        {
+        private void RemoveExportButton(IList<DashboardToolbarItem> items) {
             var exportItem = items.FirstOrDefault(i => i.ButtonType == DashboardButtonType.Export);
-            if (exportItem != null)
-            {
+            if (exportItem != null) {
                 items.Remove(exportItem);
             }
         }
