@@ -22,7 +22,7 @@ Export buttons are hidden for all dashboard items except the map, and for the en
 ![screenshot](/images/screenshot.png)
 
 <!-- default file list -->
-## Files to look at
+## Files to Review
 
 * [ViewerForm1.cs](./CS/CustomizeDashboardItemCaptionExample/ViewerForm1.cs)
 <!-- default file list end -->
