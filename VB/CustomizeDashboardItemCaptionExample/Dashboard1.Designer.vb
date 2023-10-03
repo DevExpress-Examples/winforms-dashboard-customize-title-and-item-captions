@@ -1,5 +1,7 @@
-﻿Namespace CustomizeDashboardItemCaption_Viewer_Example
-    Partial Public Class SampleDashboard
+Namespace CustomizeDashboardItemCaption_Viewer_Example
+
+    Partial Class SampleDashboard
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,66 +12,66 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Component Designer generated code"
-
+#Region "Component Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
         ''' </summary>
         Private Sub InitializeComponent()
-            Dim dimension1 As New DevExpress.DashboardCommon.Dimension()
-            Dim resources As New System.ComponentModel.ComponentResourceManager(GetType(SampleDashboard))
-            Dim fieldInfo1 As New DevExpress.DataAccess.Excel.FieldInfo()
-            Dim fieldInfo2 As New DevExpress.DataAccess.Excel.FieldInfo()
-            Dim fieldInfo3 As New DevExpress.DataAccess.Excel.FieldInfo()
-            Dim fieldInfo4 As New DevExpress.DataAccess.Excel.FieldInfo()
-            Dim fieldInfo5 As New DevExpress.DataAccess.Excel.FieldInfo()
-            Dim fieldInfo6 As New DevExpress.DataAccess.Excel.FieldInfo()
-            Dim fieldInfo7 As New DevExpress.DataAccess.Excel.FieldInfo()
-            Dim fieldInfo8 As New DevExpress.DataAccess.Excel.FieldInfo()
-            Dim fieldInfo9 As New DevExpress.DataAccess.Excel.FieldInfo()
-            Dim excelWorksheetSettings1 As New DevExpress.DataAccess.Excel.ExcelWorksheetSettings()
-            Dim excelSourceOptions1 As New DevExpress.DataAccess.Excel.ExcelSourceOptions(excelWorksheetSettings1)
-            Dim dimension2 As New DevExpress.DashboardCommon.Dimension()
-            Dim measure1 As New DevExpress.DashboardCommon.Measure()
-            Dim measure2 As New DevExpress.DashboardCommon.Measure()
-            Dim measure3 As New DevExpress.DashboardCommon.Measure()
-            Dim valueMap1 As New DevExpress.DashboardCommon.ValueMap()
-            Dim uniformScale1 As New DevExpress.DashboardCommon.UniformScale()
-            Dim deltaMap1 As New DevExpress.DashboardCommon.DeltaMap()
-            Dim dimension3 As New DevExpress.DashboardCommon.Dimension()
-            Dim gridDimensionColumn1 As New DevExpress.DashboardCommon.GridDimensionColumn()
-            Dim measure4 As New DevExpress.DashboardCommon.Measure()
-            Dim measure5 As New DevExpress.DashboardCommon.Measure()
-            Dim gridDeltaColumn1 As New DevExpress.DashboardCommon.GridDeltaColumn()
-            Dim dashboardLayoutGroup1 As New DevExpress.DashboardCommon.DashboardLayoutGroup()
-            Dim dashboardLayoutItem1 As New DevExpress.DashboardCommon.DashboardLayoutItem()
-            Dim dashboardLayoutGroup2 As New DevExpress.DashboardCommon.DashboardLayoutGroup()
-            Dim dashboardLayoutItem2 As New DevExpress.DashboardCommon.DashboardLayoutItem()
-            Dim dashboardLayoutItem3 As New DevExpress.DashboardCommon.DashboardLayoutItem()
+            Dim dimension1 As DevExpress.DashboardCommon.Dimension = New DevExpress.DashboardCommon.Dimension()
+            Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CustomizeDashboardItemCaption_Viewer_Example.SampleDashboard))
+            Dim fieldInfo1 As DevExpress.DataAccess.Excel.FieldInfo = New DevExpress.DataAccess.Excel.FieldInfo()
+            Dim fieldInfo2 As DevExpress.DataAccess.Excel.FieldInfo = New DevExpress.DataAccess.Excel.FieldInfo()
+            Dim fieldInfo3 As DevExpress.DataAccess.Excel.FieldInfo = New DevExpress.DataAccess.Excel.FieldInfo()
+            Dim fieldInfo4 As DevExpress.DataAccess.Excel.FieldInfo = New DevExpress.DataAccess.Excel.FieldInfo()
+            Dim fieldInfo5 As DevExpress.DataAccess.Excel.FieldInfo = New DevExpress.DataAccess.Excel.FieldInfo()
+            Dim fieldInfo6 As DevExpress.DataAccess.Excel.FieldInfo = New DevExpress.DataAccess.Excel.FieldInfo()
+            Dim fieldInfo7 As DevExpress.DataAccess.Excel.FieldInfo = New DevExpress.DataAccess.Excel.FieldInfo()
+            Dim fieldInfo8 As DevExpress.DataAccess.Excel.FieldInfo = New DevExpress.DataAccess.Excel.FieldInfo()
+            Dim fieldInfo9 As DevExpress.DataAccess.Excel.FieldInfo = New DevExpress.DataAccess.Excel.FieldInfo()
+            Dim excelWorksheetSettings1 As DevExpress.DataAccess.Excel.ExcelWorksheetSettings = New DevExpress.DataAccess.Excel.ExcelWorksheetSettings()
+            Dim excelSourceOptions1 As DevExpress.DataAccess.Excel.ExcelSourceOptions = New DevExpress.DataAccess.Excel.ExcelSourceOptions(excelWorksheetSettings1)
+            Dim dimension2 As DevExpress.DashboardCommon.Dimension = New DevExpress.DashboardCommon.Dimension()
+            Dim measure1 As DevExpress.DashboardCommon.Measure = New DevExpress.DashboardCommon.Measure()
+            Dim measure2 As DevExpress.DashboardCommon.Measure = New DevExpress.DashboardCommon.Measure()
+            Dim measure3 As DevExpress.DashboardCommon.Measure = New DevExpress.DashboardCommon.Measure()
+            Dim valueMap1 As DevExpress.DashboardCommon.ValueMap = New DevExpress.DashboardCommon.ValueMap()
+            Dim uniformScale1 As DevExpress.DashboardCommon.UniformScale = New DevExpress.DashboardCommon.UniformScale()
+            Dim deltaMap1 As DevExpress.DashboardCommon.DeltaMap = New DevExpress.DashboardCommon.DeltaMap()
+            Dim dimension3 As DevExpress.DashboardCommon.Dimension = New DevExpress.DashboardCommon.Dimension()
+            Dim gridDimensionColumn1 As DevExpress.DashboardCommon.GridDimensionColumn = New DevExpress.DashboardCommon.GridDimensionColumn()
+            Dim measure4 As DevExpress.DashboardCommon.Measure = New DevExpress.DashboardCommon.Measure()
+            Dim measure5 As DevExpress.DashboardCommon.Measure = New DevExpress.DashboardCommon.Measure()
+            Dim gridDeltaColumn1 As DevExpress.DashboardCommon.GridDeltaColumn = New DevExpress.DashboardCommon.GridDeltaColumn()
+            Dim dashboardLayoutGroup1 As DevExpress.DashboardCommon.DashboardLayoutGroup = New DevExpress.DashboardCommon.DashboardLayoutGroup()
+            Dim dashboardLayoutItem1 As DevExpress.DashboardCommon.DashboardLayoutItem = New DevExpress.DashboardCommon.DashboardLayoutItem()
+            Dim dashboardLayoutGroup2 As DevExpress.DashboardCommon.DashboardLayoutGroup = New DevExpress.DashboardCommon.DashboardLayoutGroup()
+            Dim dashboardLayoutItem2 As DevExpress.DashboardCommon.DashboardLayoutItem = New DevExpress.DashboardCommon.DashboardLayoutItem()
+            Dim dashboardLayoutItem3 As DevExpress.DashboardCommon.DashboardLayoutItem = New DevExpress.DashboardCommon.DashboardLayoutItem()
             Me.listBoxDashboardItem1 = New DevExpress.DashboardCommon.ListBoxDashboardItem()
             Me.dashboardExcelDataSource1 = New DevExpress.DashboardCommon.DashboardExcelDataSource()
             Me.choroplethMapDashboardItem1 = New DevExpress.DashboardCommon.ChoroplethMapDashboardItem()
             Me.gridDashboardItem1 = New DevExpress.DashboardCommon.GridDashboardItem()
-            CType(Me.listBoxDashboardItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(dimension1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.dashboardExcelDataSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.choroplethMapDashboardItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(dimension2, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(measure1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(measure2, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(measure3, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.gridDashboardItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(dimension3, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(measure4, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(measure5, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.listBoxDashboardItem1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((dimension1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.dashboardExcelDataSource1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.choroplethMapDashboardItem1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((dimension2), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((measure1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((measure2), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((measure3), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.gridDashboardItem1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((dimension3), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((measure4), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((measure5), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me), System.ComponentModel.ISupportInitialize).BeginInit()
             ' 
             ' listBoxDashboardItem1
             ' 
@@ -78,7 +80,7 @@
             Me.listBoxDashboardItem1.DataItemRepository.Clear()
             Me.listBoxDashboardItem1.DataItemRepository.Add(dimension1, "DataItem0")
             Me.listBoxDashboardItem1.DataSource = Me.dashboardExcelDataSource1
-            Me.listBoxDashboardItem1.FilterDimensions.AddRange(New DevExpress.DashboardCommon.Dimension() { dimension1})
+            Me.listBoxDashboardItem1.FilterDimensions.AddRange(New DevExpress.DashboardCommon.Dimension() {dimension1})
             Me.listBoxDashboardItem1.InteractivityOptions.IgnoreMasterFilters = True
             Me.listBoxDashboardItem1.Name = "Categories"
             Me.listBoxDashboardItem1.ShowCaption = True
@@ -107,7 +109,7 @@
             fieldInfo8.Type = GetType(Double)
             fieldInfo9.Name = "RevenueYTDTarget (Sum)"
             fieldInfo9.Type = GetType(Double)
-            Me.dashboardExcelDataSource1.Schema.AddRange(New DevExpress.DataAccess.Excel.FieldInfo() { fieldInfo1, fieldInfo2, fieldInfo3, fieldInfo4, fieldInfo5, fieldInfo6, fieldInfo7, fieldInfo8, fieldInfo9})
+            Me.dashboardExcelDataSource1.Schema.AddRange(New DevExpress.DataAccess.Excel.FieldInfo() {fieldInfo1, fieldInfo2, fieldInfo3, fieldInfo4, fieldInfo5, fieldInfo6, fieldInfo7, fieldInfo8, fieldInfo9})
             excelWorksheetSettings1.CellRange = Nothing
             excelWorksheetSettings1.WorksheetName = "Sheet1"
             excelSourceOptions1.ImportSettings = excelWorksheetSettings1
@@ -140,7 +142,7 @@
             deltaMap1.Name = "Revenue YTD vs Target"
             deltaMap1.AddDataItem("ActualValue", measure2)
             deltaMap1.AddDataItem("TargetValue", measure3)
-            Me.choroplethMapDashboardItem1.Maps.AddRange(New DevExpress.DashboardCommon.ChoroplethMap() { valueMap1, deltaMap1})
+            Me.choroplethMapDashboardItem1.Maps.AddRange(New DevExpress.DashboardCommon.ChoroplethMap() {valueMap1, deltaMap1})
             Me.choroplethMapDashboardItem1.Name = "Sales by State"
             Me.choroplethMapDashboardItem1.ShapeTitleAttributeName = "ABBREV"
             Me.choroplethMapDashboardItem1.ShowCaption = True
@@ -162,7 +164,7 @@
             gridDeltaColumn1.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight
             gridDeltaColumn1.AddDataItem("ActualValue", measure4)
             gridDeltaColumn1.AddDataItem("TargetValue", measure5)
-            Me.gridDashboardItem1.Columns.AddRange(New DevExpress.DashboardCommon.GridColumnBase() { gridDimensionColumn1, gridDeltaColumn1})
+            Me.gridDashboardItem1.Columns.AddRange(New DevExpress.DashboardCommon.GridColumnBase() {gridDimensionColumn1, gridDeltaColumn1})
             Me.gridDashboardItem1.ComponentName = "gridDashboardItem1"
             Me.gridDashboardItem1.DataItemRepository.Clear()
             Me.gridDashboardItem1.DataItemRepository.Add(dimension3, "DataItem0")
@@ -176,43 +178,44 @@
             ' SampleDashboard
             ' 
             Me.CurrencyCultureName = Nothing
-            Me.DataSources.AddRange(New DevExpress.DashboardCommon.IDashboardDataSource() { Me.dashboardExcelDataSource1})
-            Me.Items.AddRange(New DevExpress.DashboardCommon.DashboardItem() { Me.choroplethMapDashboardItem1, Me.gridDashboardItem1, Me.listBoxDashboardItem1})
+            Me.DataSources.AddRange(New DevExpress.DashboardCommon.IDashboardDataSource() {Me.dashboardExcelDataSource1})
+            Me.Items.AddRange(New DevExpress.DashboardCommon.DashboardItem() {Me.choroplethMapDashboardItem1, Me.gridDashboardItem1, Me.listBoxDashboardItem1})
             dashboardLayoutItem1.DashboardItem = Me.gridDashboardItem1
             dashboardLayoutItem1.Weight = 30.036297640653359R
             dashboardLayoutItem2.DashboardItem = Me.choroplethMapDashboardItem1
             dashboardLayoutItem2.Weight = 75.2439024390244R
             dashboardLayoutItem3.DashboardItem = Me.listBoxDashboardItem1
             dashboardLayoutItem3.Weight = 24.756097560975611R
-            dashboardLayoutGroup2.ChildNodes.AddRange(New DevExpress.DashboardCommon.DashboardLayoutNode() { dashboardLayoutItem2, dashboardLayoutItem3})
+            dashboardLayoutGroup2.ChildNodes.AddRange(New DevExpress.DashboardCommon.DashboardLayoutNode() {dashboardLayoutItem2, dashboardLayoutItem3})
             dashboardLayoutGroup2.DashboardItem = Nothing
             dashboardLayoutGroup2.Orientation = DevExpress.DashboardCommon.DashboardLayoutGroupOrientation.Vertical
             dashboardLayoutGroup2.Weight = 69.963702359346641R
-            dashboardLayoutGroup1.ChildNodes.AddRange(New DevExpress.DashboardCommon.DashboardLayoutNode() { dashboardLayoutItem1, dashboardLayoutGroup2})
+            dashboardLayoutGroup1.ChildNodes.AddRange(New DevExpress.DashboardCommon.DashboardLayoutNode() {dashboardLayoutItem1, dashboardLayoutGroup2})
             dashboardLayoutGroup1.DashboardItem = Nothing
             Me.LayoutRoot = dashboardLayoutGroup1
             Me.Title.Text = "Sample Dashboard"
-            CType(dimension1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.listBoxDashboardItem1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.dashboardExcelDataSource1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(dimension2, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(measure1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(measure2, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(measure3, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.choroplethMapDashboardItem1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(dimension3, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(measure4, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(measure5, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.gridDashboardItem1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
-
+            CType((dimension1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.listBoxDashboardItem1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.dashboardExcelDataSource1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((dimension2), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((measure1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((measure2), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((measure3), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.choroplethMapDashboardItem1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((dimension3), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((measure4), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((measure5), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.gridDashboardItem1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me), System.ComponentModel.ISupportInitialize).EndInit()
         End Sub
 
-        #End Region
-
+#End Region
         Private choroplethMapDashboardItem1 As DevExpress.DashboardCommon.ChoroplethMapDashboardItem
+
         Private dashboardExcelDataSource1 As DevExpress.DashboardCommon.DashboardExcelDataSource
+
         Private gridDashboardItem1 As DevExpress.DashboardCommon.GridDashboardItem
+
         Private listBoxDashboardItem1 As DevExpress.DashboardCommon.ListBoxDashboardItem
     End Class
 End Namespace
