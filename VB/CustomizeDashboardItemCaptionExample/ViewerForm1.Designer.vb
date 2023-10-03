@@ -1,5 +1,7 @@
-﻿Namespace CustomizeDashboardItemCaption_Viewer_Example
-    Partial Public Class ViewerForm1
+Namespace CustomizeDashboardItemCaption_Viewer_Example
+
+    Partial Class ViewerForm1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,14 +12,14 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+'#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
@@ -26,8 +28,8 @@
             Me.components = New System.ComponentModel.Container()
             Me.dashboardViewer = New DevExpress.DashboardWin.DashboardViewer(Me.components)
             Me.svgImageCollection1 = New DevExpress.Utils.SvgImageCollection(Me.components)
-            CType(Me.dashboardViewer, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.svgImageCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.dashboardViewer), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.svgImageCollection1), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' dashboardViewer
@@ -51,16 +53,14 @@
             Me.Controls.Add(Me.dashboardViewer)
             Me.Name = "ViewerForm1"
             Me.Text = "Dashboard Viewer"
-            CType(Me.dashboardViewer, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.svgImageCollection1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.dashboardViewer), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.svgImageCollection1), System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
-
+'#End Region
         Private dashboardViewer As DevExpress.DashboardWin.DashboardViewer
+
         Private svgImageCollection1 As DevExpress.Utils.SvgImageCollection
     End Class
 End Namespace
-
