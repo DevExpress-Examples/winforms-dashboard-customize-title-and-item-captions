@@ -37,7 +37,7 @@ Export buttons are hidden for all dashboard items except the map, and for the en
 - [WinForms Dashboard Viewer - How to Add a Command Button to the Dashboard Title and Item Caption](https://github.com/DevExpress-Examples/winforms-dashboard-custom-command-buttons)
 - [WinForms Dashboard Designer - How to delay data load until all filters are set](https://github.com/DevExpress-Examples/winforms-dashboard-how-to-delay-data-load-until-all-filters-are-set-t629796)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-dashboard-customize-title-and-item-captions&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-dashboard-customize-title-and-item-captions&~~~was_helpful=no)
 
